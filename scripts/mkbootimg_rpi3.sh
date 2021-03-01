@@ -14,21 +14,19 @@ mkfs.vfat -F 16 -C -n BOOT boot.img 65536
 sudo mount -o loop,uid=$USER_ID,gid=$GROUP_ID,showexec boot.img ./tmp
 if [ -n "$IS_64BIT" ]; then
 	echo "Create 64bit boot image"
-	cp -a $BOOT_PATH/config_64bit.txt ./tmp/config.txt
+	cp $BOOT_PATH/config_64bit.txt ./tmp/config.txt
 else
 	echo "Create 32bit boot image"
-	cp -a $BOOT_PATH/config_32bit.txt ./tmp/config.txt
+	cp $BOOT_PATH/config_32bit.txt ./tmp/config.txt
 fi
-cp -a $BOOT_PATH/LICENCE.broadcom ./tmp
-cp -a $BOOT_PATH/bootcode.bin ./tmp
-cp -a $BOOT_PATH/start*.elf ./tmp
-cp -a $BOOT_PATH/fixup*.dat ./tmp
+cp $BOOT_PATH/LICENCE.broadcom ./tmp
+cp $BOOT_PATH/fixup*.dat ./tmp
 if [ -n "$IS_64BIT" ]; then
-	cp -a arch/arm64/boot/Image ./tmp
-	cp -a arch/arm64/boot/dts/broadcom/bcm*.dtb ./tmp
+	cp arch/arm64/boot/Image ./tmp
+	cp arch/arm64/boot/dts/broadcom/bcm*.dtb ./tmp
 else
-	cp -a arch/arm/boot/zImage ./tmp
-	cp -a arch/arm/boot/dts/bcm*.dtb ./tmp
+	cp arch/arm/boot/zImage ./tmp
+	cp arch/arm/boot/dts/bcm*.dtb ./tmp
 fi
 
 # install u-boot files extracted from u-boot-rpi3 rpm package in download.tizen.org.
