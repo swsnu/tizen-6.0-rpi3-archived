@@ -24,6 +24,7 @@ tar xzvf "$TIZEN" -C "$IMAGEDIR"
 
 sudo mount "$IMAGEDIR/ramdisk.img" "$TMP"
 sudo sed -i 's/\/bin\/mount -o remount,ro .//' "$TMP/usr/sbin/init"
+sync
 sudo umount "$TMP"
 
 sudo ./scripts/mkbootimg_rpi3.sh
