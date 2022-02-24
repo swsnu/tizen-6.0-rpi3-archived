@@ -14,7 +14,7 @@ IMAGEDIR='tizen-image'
 TMP="$(mktemp -d)"
 
 if [ ! -f "$TIZEN" ]; then
-  curl -LO http://download.tizen.org/releases/milestone/tizen/unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/tizen-unified_20201020.1_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz
+  curl -LO http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20201020.1/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/tizen-unified_20201020.1_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz
 fi
 
 rm -rf "$IMAGEDIR"
