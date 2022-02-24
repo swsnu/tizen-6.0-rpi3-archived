@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ############################################
-# OSSPR2021                                #
+# OSSPR2022                                #
 #                                          #
 # Sets up images to boot up QEMU.          #
 # You should have built the kernel.        #
