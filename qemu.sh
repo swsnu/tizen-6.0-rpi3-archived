@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ############################################
-# OSSPR2021                                #
+# OSSPR2022                                #
 #                                          #
 # Boots up your kernel with QEMU.          #
 # Make sure you built the kernel and       #
